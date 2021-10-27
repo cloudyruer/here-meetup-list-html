@@ -1,0 +1,330 @@
+// font-family: "Roboto", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+// font-family: 'Noto Sans TC', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap");
+
+// font-family: 'Inter', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap");
+
+.j-main-mb {
+  margin-bottom: 125px;
+  @include respond(team-sm) {
+    margin-bottom: 200px;
+  }
+}
+
+.j-main-meetup {
+  font-family: "Anton", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__banner {
+    font-size: 22px;
+    letter-spacing: 1.5px;
+
+    @include respond(team-sm) {
+      font-size: 28px;
+    }
+    @include respond(team-md) {
+      font-size: 33px;
+    }
+    @include respond(team-lg) {
+      font-size: 40px;
+      // transform: scale(1.2, 1);
+    }
+  }
+
+  &__logo {
+    font-size: 60px;
+    @include respond(team-sm) {
+      font-size: 80px;
+    }
+    @include respond(team-md) {
+      font-size: 100px;
+    }
+    @include respond(team-lg) {
+      font-size: 130px;
+    }
+
+    letter-spacing: 2px;
+    display: inline-block;
+    transform: scale(1.7, 1);
+    background-size: 200%;
+    background-image: linear-gradient(
+      45deg,
+      #ff731f,
+      #ff6e1b,
+      #ff6918,
+      #f5af7d,
+      #fd9146,
+      #fe8b3c,
+      #fe8431,
+      #ff7d26,
+      #ff7822,
+      #ff731f,
+      #ff6e1b,
+      #ff6918,
+      #ff7822
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: meetup-shine 2s infinite ease;
+  }
+}
+
+@keyframes meetup-shine {
+  0% {
+    background-position: -100%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+.j-main-bg-banner {
+  color: rgba(255, 221, 191, 0.4);
+  font-size: 150px;
+  font-family: "Kanit", sans-serif;
+  position: absolute;
+  top: 400px;
+  right: -200px;
+  transform: all 0.5s;
+
+  transform: rotate(-4deg);
+}
+
+.j-main-bg-banner--right {
+  top: 280px;
+  right: 0;
+  left: -200px;
+}
+
+.j-main-bg-banner--wrap {
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+}
+
+/////////////////////////////////////////
+.j-main-banner {
+  text-align: center;
+  margin-bottom: 60px;
+
+  @include respond(team-md) {
+    margin-bottom: 80px;
+  }
+
+  //   font-family: "Roboto", sans-serif;
+
+  &__title {
+    // font-weight: 900;
+    margin-bottom: 30px;
+    font-family: "Anton", sans-serif;
+    letter-spacing: 2px;
+
+    font-size: 22px;
+
+    // 避免scale(2,1)後 更容易造成爆版
+    display: inline-block;
+    transform: scale(1.5, 1);
+
+    @include respond(team-sm) {
+      font-size: 24px;
+    }
+
+    @include respond(team-md) {
+      font-size: 30px;
+    }
+
+    @include respond(team-lg) {
+      font-size: 50px;
+      // transform: scale(1.5, 1);
+    }
+  }
+
+  &__sub {
+    font-size: 17px;
+    font-weight: 500;
+    font-family: "Noto Sans TC", sans-serif;
+    letter-spacing: 1.5px;
+
+    @include respond(team-sm) {
+      font-size: 20px;
+    }
+
+    @include respond(team-md) {
+      font-size: 24px;
+    }
+
+    @include respond(team-lg) {
+      font-size: 28px;
+    }
+  }
+}
+
+.j-main-act-card {
+  color: black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+
+  @include respond(team-md) {
+    margin-bottom: 30px;
+  }
+
+  @include respond(team-lg) {
+    margin-bottom: 40px;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+
+  &__icon-box {
+    width: 130px;
+    height: 120px;
+    border: 4px solid #fb7618;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 130px;
+      height: 120px;
+      background: rgba(252, 227, 205, 0.4);
+      top: 7px;
+      left: -25px;
+      z-index: -1;
+    }
+
+    & svg {
+      color: #023a20;
+      font-size: 80px;
+    }
+  }
+
+  &__title {
+    margin: 30px 0 22px;
+    font-weight: bold;
+    font-size: 28px;
+    font-family: "Noto Sans TC", sans-serif;
+    letter-spacing: 1.5px;
+  }
+
+  &__content {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Noto Sans TC", sans-serif;
+    letter-spacing: 1px;
+    display: none;
+    @include respond(team-lg) {
+      display: block;
+    }
+  }
+}
+
+.j-main-btn {
+  width: 294px;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: "Inter", "Noto Sans TC", sans-serif;
+
+  margin-top: 20px;
+
+  @include respond(team-sm) {
+    margin-top: 40px;
+  }
+
+  // @include respond(team-lg) {
+  //   width: 408px;
+  // }
+
+  &--secondary {
+    background-color: #025930;
+    &:hover {
+      background: #96bb7c;
+    }
+  }
+}
+
+.j-main-search-wrap {
+  text-align: center;
+}
+
+.j-main-search {
+  &__title {
+    font-family: "Anton", sans-serif;
+    font-size: 24px;
+    letter-spacing: 1px;
+    display: inline-block;
+
+    @include respond(team-sm) {
+      font-size: 20 px;
+    }
+
+    @include respond(team-md) {
+      font-size: 30px;
+    }
+
+    @include respond(team-lg) {
+      font-size: 40px;
+      // transform: scale(1.7, 1);
+    }
+  }
+
+  &__input-row {
+    margin: 40px auto 20px;
+
+    @include respond(team-md) {
+      & div {
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+    }
+
+    @include respond(team-lg) {
+      width: 80%;
+    }
+  }
+
+  &__input {
+    font-weight: 600;
+    font-family: "Font Awesome 6 Free";
+
+    border: 3px solid black;
+    padding: 20px;
+    font-size: 18px;
+
+    width: 70%;
+    margin: 0 auto 15px;
+
+    @include respond(team-md) {
+      width: 100%;
+    }
+
+    &::placeholder {
+      color: #b0b8bc;
+    }
+  }
+}
+
+.j-main-tag-btn {
+  color: #5d6970;
+  border: 2px solid #5d6970;
+  border-radius: 100px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  width: 117px;
+  margin: 10px;
+}
