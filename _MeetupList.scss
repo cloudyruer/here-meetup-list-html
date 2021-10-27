@@ -1,0 +1,85 @@
+.j-list-search {
+  margin-top: 60px;
+  margin-bottom: 40px;
+
+  &__input {
+    font-weight: 600;
+    font-family: "Font Awesome 6 Free";
+
+    border: 3px solid black;
+    padding: 20px;
+    font-size: 18px;
+
+    margin: 0 auto 15px;
+
+    &::placeholder {
+      color: #b0b8bc;
+    }
+  }
+}
+
+// card
+.j-list-card {
+  display: block;
+  color: black;
+  cursor: pointer;
+  margin-bottom: 50px;
+
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0px 8px 20px -7px rgba(0, 0, 0, 0.51);
+
+  &:hover {
+    text-decoration: none;
+    color: black;
+
+    & img {
+      filter: contrast(100%);
+    }
+  }
+
+  &__img-box {
+    overflow: hidden;
+    height: 300px;
+
+    img {
+      transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+      filter: contrast(70%);
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__info-box {
+    margin-left: 30px;
+    padding-bottom: 20px;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  &__time {
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  &__location {
+    display: flex;
+
+    //NOTE 1022 added
+    align-items: baseline;
+
+    i {
+      color: #b0b8bc;
+      margin-right: 13px;
+    }
+  }
+
+  &__data {
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+}
