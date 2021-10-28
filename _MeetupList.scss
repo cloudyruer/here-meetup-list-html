@@ -23,28 +23,38 @@
   display: block;
   color: black;
   cursor: pointer;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
+  position: relative;
+  //   NOTE
+  background-color: rgba(255, 255, 255, 0.4);
 
   border-radius: 5px;
   overflow: hidden;
-  box-shadow: 0px 8px 20px -7px rgba(0, 0, 0, 0.51);
+
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  transition: all 0.2s;
+
+  backdrop-filter: blur(3px);
 
   &:hover {
     text-decoration: none;
     color: black;
+    background-color: rgba(255, 255, 255, 0.8);
 
     & img {
-      filter: contrast(100%);
+      filter: contrast(120%);
     }
   }
 
   &__img-box {
     overflow: hidden;
     height: 300px;
+    padding: 20px;
 
     img {
-      transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
-      filter: contrast(70%);
+      transition: all 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+      filter: contrast(50%);
       object-fit: cover;
       width: 100%;
       height: 100%;
@@ -64,6 +74,8 @@
   &__time {
     font-weight: 500;
     font-size: 20px;
+    margin-top: 8px;
+    margin-bottom: 12px;
   }
 
   &__location {
@@ -82,4 +94,95 @@
     font-weight: 600;
     margin-bottom: 10px;
   }
+}
+
+//////////////////////////
+.j-list-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  &__circle {
+    $particleSize: 30vmin;
+    $animationDuration: 25s;
+    $amount: 10;
+
+    z-index: -2;
+    width: $particleSize;
+    height: $particleSize;
+    border-radius: $particleSize;
+    position: absolute;
+    animation: $animationDuration linear infinite circleMove;
+
+    @for $i from 1 through $amount {
+      &:nth-child(#{$i}) {
+        color: ghostwhite;
+
+        // 隨機起始位置
+        top: random(100) * 1%;
+        left: random(100) * 1%;
+
+        backdrop-filter: blur(1px);
+
+        // 亂數開始時間
+        animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;
+
+        // 亂數延遲
+        animation-delay: random(($animationDuration + 10s) * 10) / 10 * -1s;
+
+        //距離旋轉中心點 一定範圍內 隨機距離 並且決定左旋獲右旋
+        transform-origin: (random(50) - 25) * 1vw (random(50) - 25) * 1vh;
+
+        // box-shadow: 20px 0 50px currentColor;
+
+        $blurRadius: (random() + 0.5) * $particleSize * 0.5;
+        $x: if(random() > 0.5, -1, 1);
+        box-shadow: ($particleSize * 2 * $x) 0 $blurRadius currentColor;
+      }
+    }
+  }
+}
+
+@keyframes circleMove {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+// background - text
+.j-list-bg-wrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: -5;
+}
+
+.j-list-bg {
+  position: relative;
+
+  color: rgb(252, 252, 252);
+
+  font-weight: 700;
+  font-size: 200px;
+  letter-spacing: 6px;
+  text-align: center;
+  transform: rotate(-20deg) skew(25deg);
+  margin: 60px;
+  z-index: -1;
+}
+
+.j-list-bg:before {
+  content: attr(data-text);
+  position: absolute;
+  top: 30px;
+  left: -30px;
+  color: rgba(0, 0, 0, 0.5);
+  text-shadow: none;
+  filter: blur(8px);
+  z-index: -2;
 }

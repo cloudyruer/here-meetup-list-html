@@ -1383,35 +1383,41 @@
   display: block;
   color: black;
   cursor: pointer;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.4);
   border-radius: 5px;
   overflow: hidden;
-  -webkit-box-shadow: 0px 8px 20px -7px rgba(0, 0, 0, 0.51);
-          box-shadow: 0px 8px 20px -7px rgba(0, 0, 0, 0.51);
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
 }
 
 .j-list-card:hover {
   text-decoration: none;
   color: black;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .j-list-card:hover img {
-  -webkit-filter: contrast(100%);
-          filter: contrast(100%);
+  -webkit-filter: contrast(120%);
+          filter: contrast(120%);
 }
 
 .j-list-card__img-box {
   overflow: hidden;
   height: 300px;
+  padding: 20px;
 }
 
 .j-list-card__img-box img {
-  -webkit-transition: -webkit-filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
-  transition: -webkit-filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
-  transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
-  transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91), -webkit-filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
-  -webkit-filter: contrast(70%);
-          filter: contrast(70%);
+  -webkit-transition: all 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+  transition: all 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+  -webkit-filter: contrast(50%);
+          filter: contrast(50%);
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
@@ -1431,6 +1437,8 @@
 .j-list-card__time {
   font-weight: 500;
   font-size: 20px;
+  margin-top: 8px;
+  margin-bottom: 12px;
 }
 
 .j-list-card__location {
@@ -1450,5 +1458,238 @@
 .j-list-card__data {
   font-weight: 600;
   margin-bottom: 10px;
+}
+
+.j-list-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.j-list-wrapper__circle {
+  z-index: -2;
+  width: 30vmin;
+  height: 30vmin;
+  border-radius: 30vmin;
+  position: absolute;
+  -webkit-animation: 25s linear infinite circleMove;
+          animation: 25s linear infinite circleMove;
+}
+
+.j-list-wrapper__circle:nth-child(1) {
+  color: ghostwhite;
+  top: 19%;
+  left: 10%;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  -webkit-animation-duration: 14.9s;
+          animation-duration: 14.9s;
+  -webkit-animation-delay: -28.7s;
+          animation-delay: -28.7s;
+  -webkit-transform-origin: 19vw 10vh;
+          transform-origin: 19vw 10vh;
+  -webkit-box-shadow: -60vmin 0 14.17955vmin currentColor;
+          box-shadow: -60vmin 0 14.17955vmin currentColor;
+}
+
+.j-list-wrapper__circle:nth-child(2) {
+  color: ghostwhite;
+  top: 31%;
+  left: 94%;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  -webkit-animation-duration: 22.3s;
+          animation-duration: 22.3s;
+  -webkit-animation-delay: -6.3s;
+          animation-delay: -6.3s;
+  -webkit-transform-origin: 25vw -21vh;
+          transform-origin: 25vw -21vh;
+  -webkit-box-shadow: -60vmin 0 19.04355vmin currentColor;
+          box-shadow: -60vmin 0 19.04355vmin currentColor;
+}
+
+.j-list-wrapper__circle:nth-child(3) {
+  color: ghostwhite;
+  top: 59%;
+  left: 91%;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  -webkit-animation-duration: 17.3s;
+          animation-duration: 17.3s;
+  -webkit-animation-delay: -12.3s;
+          animation-delay: -12.3s;
+  -webkit-transform-origin: 9vw 12vh;
+          transform-origin: 9vw 12vh;
+  -webkit-box-shadow: -60vmin 0 13.2461vmin currentColor;
+          box-shadow: -60vmin 0 13.2461vmin currentColor;
+}
+
+.j-list-wrapper__circle:nth-child(4) {
+  color: ghostwhite;
+  top: 70%;
+  left: 51%;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  -webkit-animation-duration: 24.3s;
+          animation-duration: 24.3s;
+  -webkit-animation-delay: -13.6s;
+          animation-delay: -13.6s;
+  -webkit-transform-origin: 21vw -18vh;
+          transform-origin: 21vw -18vh;
+  -webkit-box-shadow: 60vmin 0 21.70253vmin currentColor;
+          box-shadow: 60vmin 0 21.70253vmin currentColor;
+}
+
+.j-list-wrapper__circle:nth-child(5) {
+  color: ghostwhite;
+  top: 11%;
+  left: 61%;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  -webkit-animation-duration: 11.2s;
+          animation-duration: 11.2s;
+  -webkit-animation-delay: -27.9s;
+          animation-delay: -27.9s;
+  -webkit-transform-origin: -24vw -24vh;
+          transform-origin: -24vw -24vh;
+  -webkit-box-shadow: 60vmin 0 18.98652vmin currentColor;
+          box-shadow: 60vmin 0 18.98652vmin currentColor;
+}
+
+.j-list-wrapper__circle:nth-child(6) {
+  color: ghostwhite;
+  top: 39%;
+  left: 96%;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  -webkit-animation-duration: 34.9s;
+          animation-duration: 34.9s;
+  -webkit-animation-delay: -31.3s;
+          animation-delay: -31.3s;
+  -webkit-transform-origin: 21vw -18vh;
+          transform-origin: 21vw -18vh;
+  -webkit-box-shadow: 60vmin 0 21.54627vmin currentColor;
+          box-shadow: 60vmin 0 21.54627vmin currentColor;
+}
+
+.j-list-wrapper__circle:nth-child(7) {
+  color: ghostwhite;
+  top: 49%;
+  left: 91%;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  -webkit-animation-duration: 11s;
+          animation-duration: 11s;
+  -webkit-animation-delay: -19.5s;
+          animation-delay: -19.5s;
+  -webkit-transform-origin: 23vw 3vh;
+          transform-origin: 23vw 3vh;
+  -webkit-box-shadow: -60vmin 0 10.90365vmin currentColor;
+          box-shadow: -60vmin 0 10.90365vmin currentColor;
+}
+
+.j-list-wrapper__circle:nth-child(8) {
+  color: ghostwhite;
+  top: 26%;
+  left: 98%;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  -webkit-animation-duration: 23.5s;
+          animation-duration: 23.5s;
+  -webkit-animation-delay: -3.4s;
+          animation-delay: -3.4s;
+  -webkit-transform-origin: 19vw 9vh;
+          transform-origin: 19vw 9vh;
+  -webkit-box-shadow: -60vmin 0 12.00048vmin currentColor;
+          box-shadow: -60vmin 0 12.00048vmin currentColor;
+}
+
+.j-list-wrapper__circle:nth-child(9) {
+  color: ghostwhite;
+  top: 82%;
+  left: 4%;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  -webkit-animation-duration: 10.7s;
+          animation-duration: 10.7s;
+  -webkit-animation-delay: -14.7s;
+          animation-delay: -14.7s;
+  -webkit-transform-origin: -12vw -6vh;
+          transform-origin: -12vw -6vh;
+  -webkit-box-shadow: 60vmin 0 11.20447vmin currentColor;
+          box-shadow: 60vmin 0 11.20447vmin currentColor;
+}
+
+.j-list-wrapper__circle:nth-child(10) {
+  color: ghostwhite;
+  top: 89%;
+  left: 72%;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  -webkit-animation-duration: 15.9s;
+          animation-duration: 15.9s;
+  -webkit-animation-delay: -5s;
+          animation-delay: -5s;
+  -webkit-transform-origin: 11vw 11vh;
+          transform-origin: 11vw 11vh;
+  -webkit-box-shadow: 60vmin 0 15.80535vmin currentColor;
+          box-shadow: 60vmin 0 15.80535vmin currentColor;
+}
+
+@-webkit-keyframes circleMove {
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+@keyframes circleMove {
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+.j-list-bg-wrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  z-index: -5;
+}
+
+.j-list-bg {
+  position: relative;
+  color: #fcfcfc;
+  font-weight: 700;
+  font-size: 200px;
+  letter-spacing: 6px;
+  text-align: center;
+  -webkit-transform: rotate(-20deg) skew(25deg);
+          transform: rotate(-20deg) skew(25deg);
+  margin: 60px;
+  z-index: -1;
+}
+
+.j-list-bg:before {
+  content: attr(data-text);
+  position: absolute;
+  top: 30px;
+  left: -30px;
+  color: rgba(0, 0, 0, 0.5);
+  text-shadow: none;
+  -webkit-filter: blur(8px);
+          filter: blur(8px);
+  z-index: -2;
 }
 /*# sourceMappingURL=style.css.map */
